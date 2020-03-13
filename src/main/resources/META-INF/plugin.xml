@@ -26,9 +26,18 @@
         ]]>
     </change-notes>
 
+    <actions>
+        <action id="com.intellij.styledComponents.IndentAction" class="com.intellij.styledComponents.IndentAction"
+                text="Indent Code" description="Indent styled-component code">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt B"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+
     <idea-version since-build="192"/>
 
     <extensions defaultExtensionNs="com.intellij">
+        <lang.formatter language="LESS" implementationClass="com.intellij.styledComponents.StyledComponentsFormattingBuilder"/>
         <multiHostInjector implementation="com.intellij.styledComponents.StyledComponentsInjector"/>
         <projectService serviceImplementation="com.intellij.styledComponents.CustomInjectionsConfiguration"/>
         <projectConfigurable parentId="Settings.JavaScript"
